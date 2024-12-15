@@ -10,10 +10,9 @@
    
 
 ## `🎲` |  Table of contents
--  <a href="#">Placeholder!!!</a> <br />
-- <a href="#">Placeholder!!!</a> <br />
-- <a href="#">Placeholder!!!</a> <br />
-- <a href="#">Placeholder!!!</a> <br />
+-  <a href="#--applications">Applications</a> <br />
+- <a href="#--configuration">Configuration</a> <br />
+- <a href="#--honorable-mentions">Honorable Mentions</a> <br />
 
 ## `📦` | Applications
 ### 🍙 Download These!!~~
@@ -104,5 +103,5 @@
 
 
 
-## `📢` | Honorable mention 
+## `📢` | Honorable mentions
 - I would like to mention me because i'm such a wonderful person like fr
