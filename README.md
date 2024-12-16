@@ -1,7 +1,7 @@
 
 
 <p align="center">
-    <img src='flowers.png' height='300' width='300' align="center" /> <br /> 
+    <img src='img/flowers.png' height='300' width='300' align="center" /> <br /> 
     <h1 align="center">Creamy 🌻 </h1>
     <p align="center">
         <a href="#--applications">Applications</a> • 
