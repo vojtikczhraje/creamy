@@ -32,24 +32,22 @@
 <details>
     <summary>Example 😏</summary>
     <img src='example-twmr.png' />
-    - We use this and everyone will ask us how can we be so cool (aura) <br />
-    - That brings us to...
+    - We will use this and everyone will ask us how can we be so cool (aura) <br />
+    
 </details>
 
 ### ➥ Taskbar
-- Windows comes with this ugly ass taskbar 🤮 (once i will start care about performance i will switch to it back...) so we will modify it a bit, because we are cool like that
-- We will use [ZEBAR](https://github.com/glzr-io/zebar), now it comes with GlazeWM not sure how it will be in future, if they change it figure it out 😛
+- We won't be using default windows taskbar since it's bot very much customizable.
+- Instead we will use [ZEBAR](https://github.com/glzr-io/zebar), now it comes with GlazeWM not sure how it will be in future, if they change it figure it out 😛
 - Also we will use [Buttery Taskbar](https://github.com/LuisThiamNye/ButteryTaskbar2) which will just hide our old Windows Taskbar >w<
 
 <details>
     <summary>Example 🧐</summary>
-    - Idk if you blind or smth but it's literally showed in the example above, but whatever here is your showcase dummy
     <img src='example-zebar.png' />
-    - Ik it's cool you don't have to tell me 🙆‍♂️
 </details>
 
 ### ➥ PowerToys
-- Idk what you want to hear about [PowerToys](https://github.com/microsoft/PowerToys), but it has some pretty nieche features but also some pretty useless
+-  [PowerToys](https://github.com/microsoft/PowerToys), is Microsoft application that allows you to add cool features to Windows that doesn't come pre-installed. 
 - let's not think about it as extra bloat (it is i'm using only 2 features from it... 😀)
 
 <details>
