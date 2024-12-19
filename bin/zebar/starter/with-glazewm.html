@@ -48,8 +48,11 @@
       function App() {
         const [output, setOutput] = useState(providers.outputMap);
 
+        
+
         useEffect(() => {
           providers.onOutput(() => setOutput(providers.outputMap));
+          
         }, []);
 
         // Get icon to show for current network status.
@@ -95,6 +98,7 @@
           return <i className="nf nf-fa-battery_0"></i>;
         }
 
+
         // Get icon to show for current weather status.
         function getWeatherIcon(weatherOutput) {
           switch (weatherOutput.status) {
@@ -127,12 +131,18 @@
 
         return (
           <div className="bg-transparent">
-          <div className="app overflow-hidden rounded-xl h-[35px]">
-            <div className="left">
-              
+          <div className="app overflow-hidden rounded-b-xl h-[50px]">
+
+            
+            <div className="left gap-4">
+
+              <img src="img\kitty.gif" alt="kitty" />
+
+              {/*
               {output.glazewm && (
                 <div className="workspaces">
                   {output.glazewm.currentWorkspaces.map(workspace => (
+                    
                     <button
                       className={`workspace ${workspace.hasFocus && 'focused'} ${workspace.isDisplayed && 'displayed'}`}
                       onClick={() =>
@@ -142,14 +152,76 @@
                       }
                       key={workspace.name}
                     >
+                      {console.log(workspace)}
                       {workspace.displayName ?? workspace.name}
                     </button>
                   ))}
                 </div>
-              )}
+              )} 
+              */}
+
+              {output.glazewm && (
+                  <div className="bg-[#f2e9e1] w-[250px] h-[28px] rounded-xl flex items-center justify-center gap-4">
+                    {[...Array(9)].map((_, index) => {
+                      const workspaceNumber = (index + 1).toString();
+                      const activeWorkspace = output.glazewm.currentWorkspaces.find(
+                        (workspace) => workspace.name === workspaceNumber
+                      );
+
+                      // Define a palette of colors
+                      const colors = [
+                        "#fd829e", // Pink
+                        "#fcba04", // Yellow
+                        "#8bc34a", // Green
+                        "#4caf50", // Darker Green
+                        "#03a9f4", // Light Blue
+                        "#ff5722", // Orange
+                        "#9c27b0", // Purple
+                        "#673ab7", // Deep Purple
+                        "#e91e63", // Hot Pink
+                      ];
+
+                      // Choose the color based on the index
+                      const dotColor = colors[index % colors.length];
+
+                      return activeWorkspace ? (
+                        <div
+                          key={workspaceNumber}
+                          className="h-[12px] w-[12px] rounded-full cursor-pointer select-none"
+                          style={{ backgroundColor: dotColor }}
+                          onClick={() =>
+                              output.glazewm.runCommand(
+                                `focus --workspace ${workspaceNumber}`,
+                              )
+                            }
+                        ></div>
+                      ) : (
+                        <div
+                          key={workspaceNumber}
+                          className="text-[#000] text-[12px] h-[12px] w-[12px] flex items-center justify-center cursor-pointer select-none"
+                          style={{color: dotColor}}
+                          onClick={() =>
+                              output.glazewm.runCommand(
+                                `focus --workspace ${workspaceNumber}`,
+                              )
+                            }
+                        >
+                          {workspaceNumber}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
             </div>
 
-            <div className="center select-none text-[14px]">{output.date?.formatted}</div>
+            <div className="center bg-[#f2e9e1] px-5 h-[28px] rounded-xl flex items-center justify-center gap-2 select-none">{output.date?.formatted} | 
+              {output.weather && (
+                <div className="weather">
+                  {getWeatherIcon(output.weather)}
+                  {Math.round(output.weather.celsiusTemp)}°C
+                </div>
+              )}</div>
 
             <div className="right">
               {output.glazewm && (
@@ -176,7 +248,37 @@
                   ></button>
                 </>
               )}
+              
+              <div className="bg-[#f2e9e1] px-3 h-[28px] rounded-xl flex items-center justify-center gap-5 select-none"> 
+                {output.cpu && (
+                    <div className="cpu">
+                      <i className="nf nf-oct-cpu"></i>
 
+                      {/* Change the text color if the CPU usage is high. */}
+                      <span
+                        className={output.cpu.usage > 85 ? 'high-usage' : ''}
+                      >
+                        {Math.round(output.cpu.usage)}%
+                      </span>
+                    </div>
+                  )} 
+
+                  {output.memory && (
+                      <div className="memory">
+                        <i className="nf nf-fae-chip"></i>
+                        {Math.round(output.memory.usage)}%
+                      </div>
+                  )}
+
+                  {output.network && (
+                      <div className="network">
+                        {getNetworkIcon(output.network)}
+                        {output.network.defaultGateway?.ssid}
+                      </div>
+                    )}
+              </div>
+
+              {/* 
               {output.cpu && (
               <div className='flex items-center gap-2 text-[14px]'>
                    CPU 
@@ -190,6 +292,9 @@
                 </div>%
                 </div>
               )}
+              */}
+
+              
             </div>
           </div>
           </div>

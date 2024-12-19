@@ -10,9 +10,9 @@
     {
       "name": "default",
       "anchor": "top_left",
-      "offsetX": "10px",
-      "offsetY": "10px",
-      "width": "99%",
+      "offsetX": "200px",
+      "offsetY": "0px",
+      "width": "80%",
       "height": "60px",
       "monitorSelection": {
         "type": "all"

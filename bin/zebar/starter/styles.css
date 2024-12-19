@@ -42,7 +42,7 @@ body,
   align-items: center;
   /* height: 100%; */
   padding: 4px 1.5vw;
-  background: #f2f0e3;
+  background: #faf4ed;
 }
 
 .left,
@@ -60,15 +60,7 @@ body,
   justify-self: end;
 }
 
-.logo,
-.binding-mode,
-.tiling-direction,
-.network,
-.memory,
-.cpu,
-.battery {
-  margin-right: 20px;
-}
+
 
 .workspaces {
   display: flex;
@@ -88,6 +80,14 @@ body,
   &.displayed {
     background: rgb(255 255 255 / 15%);
   }
+
+  .workspaces button {
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .workspaces button:hover {
+    transform: scale(1.1);
+  }
+  
 
   &.focused,
   &:hover {
